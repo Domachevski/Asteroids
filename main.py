@@ -4,19 +4,19 @@ from constants import *
 
 def main():
     pygame.init()
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    # Boot text
     print("Starting asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
-    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    # Infinite while loop with drawing screen windows
+    # Infinite loop with exit button execution
     while True:
-        pygame.Surface.fill(screen,(0,0,0))
-        pygame.display.flip()
-        # Exit button execute
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
-
+        # Window fill with black color and constantly refreshing 
+        screen.fill("black")
+        pygame.display.flip()
 
 
 
